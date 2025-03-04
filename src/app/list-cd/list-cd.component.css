@@ -1,0 +1,7 @@
+.cdContainer {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-column-gap: 15px;
+}
+
+/*# sourceMappingURL=list-cd.component.css.map */

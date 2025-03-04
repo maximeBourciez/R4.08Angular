@@ -1,0 +1,77 @@
+$primary-color: #333;
+$text-color: white;
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-color;
+  padding: 10px 20px;
+
+  .logo {
+    color: $text-color;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+    li {
+      a {
+        color: $text-color;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 8px 12px;
+        transition: background 0.3s;
+
+        &:hover {
+          background-color: lighten($primary-color, 20%);
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+
+    div {
+      width: 25px;
+      height: 3px;
+      background-color: $text-color;
+      margin: 5px;
+      transition: 0.3s;
+    }
+  }
+}
+
+// Responsive - Menu burger pour mobile
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background-color: $primary-color;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    display: none;
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+
