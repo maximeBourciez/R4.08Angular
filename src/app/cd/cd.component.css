@@ -1,36 +1,74 @@
 .cd-card {
-  box-sizing: border-box;
-  padding: 20px 30px;
-  box-shadow: lightgray 4px 4px 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 15px auto;
+  max-width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
 }
-.cd-card img {
-  width: 100%;
+
+.cd-card:hover {
+  transform: scale(1.05);
 }
-.cd-card h2 {
-  margin-bottom: 0;
+
+h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
 }
-.cd-card p {
-  font-weight: 300;
-  font-size: 16px;
+
+p {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
 }
-.cd-card button {
-  background-color: rgba(102, 87, 87, 0.37);
-  box-sizing: border-box;
-  padding: 5px 10px;
+
+.button {
+  background-color: #007bff;
+  color: white;
   border: none;
-  box-shadow: lightgray 3px 3px 7px;
-  margin-right: 20px;
-  outline: none;
-  font-size: 14px;
-  font-weight: 500;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
 }
-.cd-card button:active {
-  transform: translate(1px, 1px);
-  box-shadow: lightgray 0 0 5px;
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.btn a {
+  text-decoration: none;
+}
+
+.btn button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn button:hover {
+  background-color: #218838;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
 }
 
 .cd-added {
-  background-color: rgba(44, 172, 44, 0.514);
+  border: 2px solid #ff9800;
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.5);
 }
 
 /*# sourceMappingURL=cd.component.css.map */
