@@ -1,0 +1,62 @@
+.monForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+.monForm .subForm {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: 25px;
+}
+.monForm .subForm h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+.monForm .subForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.monForm .subForm form label {
+  font-weight: bold;
+  color: #555;
+}
+.monForm .subForm form input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+.monForm .subForm form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+.monForm .subForm form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.monForm .subForm form button:hover {
+  background-color: #0056b3;
+}
+.monForm .subForm form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.monForm .subForm img {
+  width: 200px;
+}
+
+/*# sourceMappingURL=new-cd.component.css.map */
