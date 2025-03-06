@@ -11,15 +11,15 @@
           formControlName="titre"
         />
         <small
-          *ngIf="form.get('titre').invalid &&
-                 (form.get('titre').dirty ||
-                  form.get('titre').touched)"
+          *ngIf="form.get('titre')?.invalid &&
+                 (form.get('titre')?.dirty ||
+                  form.get('titre')?.touched)"
           class="text-danger"
         >
-          <small *ngIf="form.get('titre').hasError('required')">
+          <small *ngIf="form.get('titre')?.hasError('required')">
             Ce champ est requis.
           </small>
-          <small *ngIf="form.get('titre').hasError('minlength')">
+          <small *ngIf="form.get('titre')?.hasError('minlength')">
             Ce champ doit comporter au moins 6 caractères.
           </small>
         </small>
@@ -34,15 +34,15 @@
           formControlName="auteur"
         />
         <small
-          *ngIf="form.get('auteur').invalid &&
-                 (form.get('auteur').dirty ||
-                  form.get('auteur').touched)"
+          *ngIf="form.get('auteur')?.invalid &&
+                 (form.get('auteur')?.dirty ||
+                  form.get('auteur')?.touched)"
           class="text-danger"
         >
-          <small *ngIf="form.get('auteur').hasError('required')">
+          <small *ngIf="form.get('auteur')?.hasError('required')">
             Ce champ est requis.
           </small>
-          <small *ngIf="form.get('auteur').hasError('minlength')">
+          <small *ngIf="form.get('auteur')?.hasError('minlength')">
             Ce champ doit comporter au moins 6 caractères.
           </small>
         </small>
@@ -57,12 +57,12 @@
           formControlName="image"
         />
         <small
-          *ngIf="form.get('image').invalid &&
-                 (form.get('image').dirty ||
-                  form.get('image').touched)"
+          *ngIf="form.get('image')?.invalid &&
+                 (form.get('image')?.dirty ||
+                  form.get('image')?.touched)"
           class="text-danger"
         >
-          <small *ngIf="form.get('image').hasError('pattern')">
+          <small *ngIf="form.get('image')?.hasError('pattern')">
             Veuillez entrer une URL valide.
           </small>
         </small>
@@ -77,15 +77,15 @@
           formControlName="prix"
         />
         <small
-          *ngIf="form.get('prix').invalid &&
-                 (form.get('prix').dirty ||
-                  form.get('prix').touched)"
+          *ngIf="form.get('prix')?.invalid &&
+                 (form.get('prix')?.dirty ||
+                  form.get('prix')?.touched)"
           class="text-danger"
         >
-          <small *ngIf="form.get('prix').hasError('required')">
+          <small *ngIf="form.get('prix')?.hasError('required')">
             Ce champ est requis.
           </small>
-          <small *ngIf="form.get('prix').hasError('min')">
+          <small *ngIf="form.get('prix')?.hasError('min')">
             Le prix doit être supérieur à 0.
           </small>
         </small>
@@ -100,15 +100,15 @@
           formControlName="quantite"
         />
         <small
-          *ngIf="form.get('quantite').invalid &&
-                 (form.get('quantite').dirty ||
-                  form.get('quantite').touched)"
+          *ngIf="form.get('quantite')?.invalid &&
+                 (form.get('quantite')?.dirty ||
+                  form.get('quantite')?.touched)"
           class="text-danger"
         >
-          <small *ngIf="form.get('quantite').hasError('required')">
+          <small *ngIf="form.get('quantite')?.hasError('required')">
             Ce champ est requis.
           </small>
-          <small *ngIf="form.get('quantite').hasError('min')">
+          <small *ngIf="form.get('quantite')?.hasError('min')">
             La quantité doit être supérieure ou égale à 0.
           </small>
         </small>
@@ -123,12 +123,12 @@
           formControlName="dateSortie"
         />
         <small
-          *ngIf="form.get('dateSortie').invalid &&
-                 (form.get('dateSortie').dirty ||
-                  form.get('dateSortie').touched)"
+          *ngIf="form.get('dateSortie')?.invalid &&
+                 (form.get('dateSortie')?.dirty ||
+                  form.get('dateSortie')?.touched)"
           class="text-danger"
         >
-          <small *ngIf="form.get('dateSortie').hasError('required')">
+          <small *ngIf="form.get('dateSortie')?.hasError('required')">
             Ce champ est requis.
           </small>
         </small>
