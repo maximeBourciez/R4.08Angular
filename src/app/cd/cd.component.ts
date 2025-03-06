@@ -22,7 +22,7 @@ export class CdComponent {
     this.idCd = this.route.snapshot.params['id'];
 
     if(this.idCd !== undefined){
-      this.leCd = this.cdService.getCdById(+this.idCd);
+      this.cdService.getCdById(+this.idCd).subscribe(cd => {this.leCd = cd});
     }
     else{
       this.leCd = this.Cd;

@@ -17,7 +17,7 @@ export class ListCdComponent implements OnInit {
 
   // Méthode à l'initialisation
   ngOnInit(): void {
-    this.listCd = this.cdService.getAllCds();
+   this.cdService.getAllCds().subscribe(cds => {this.listCd = cds;});
   }
 
 }

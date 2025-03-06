@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NewCdComponent } from './new-cd/new-cd.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, CdComponent, ListCdComponent, FooterComponent, HomeComponent, NewCdComponent], // Ajout de AppComponent ici
@@ -17,6 +18,7 @@ import { NewCdComponent } from './new-cd/new-cd.component';
       AppRoutingModule,
       ReactiveFormsModule,
       FormsModule,
+      HttpClientModule,
   ],
   bootstrap: [AppComponent] // Bootstraper l'application
 })
