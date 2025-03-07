@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Cd} from '../models/cd.model';
+import {CdsService} from '../services/cds.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-new-cd',
@@ -16,11 +18,11 @@ export class NewCdComponent {
   imageRegEx?: RegExp;
 
   // Constructeur
-  constructor(private builder: FormBuilder) {}
+  constructor(private builder: FormBuilder, private cdService: CdsService, private router: Router) {}
 
   // méthodes
   ngOnInit() {
-    this.imageRegEx = new RegExp("https?:\/\/.*\.(?:png|jpg|jpeg|gif|svg|webp)$")
+    this.imageRegEx = new RegExp("https?:\/\/.*\.$")
 
     // Builder du formulaire
     this.form = this.builder.group({
@@ -48,11 +50,31 @@ export class NewCdComponent {
     })
   }
 
-  // Gestiond des inputs et de la retrascription
-
 
   // Gestion des soumissions
   onSubmit() {
 
+    // Récupérer les données
+    let newCd : Cd = {
+      id : 0,
+      titre : this.form.get('titre')?.value,
+      auteur : this.form.get('auteur')?.value,
+      image: this.form.get('image')?.value,
+      dateSortie: this.form.get('dateSortie')?.value,
+      quantite: this.form.get('quantite')?.value,
+      prix: this.form.get('prix')?.value,
+      onSale : false
+    }
+
+    // Envoyer les données
+    this.cdService.addCD(newCd).subscribe({
+      next: (cd) => {
+        this.router.navigateByUrl('/catalog'); // Redirection après ajout
+      },
+      error: (err) => {
+        console.error(`Erreur lors de l'ajout du CD : ${err}`);
+        alert("Désolé, le CD n'a pas pu être ajouté");
+      }
+    });
   }
 }

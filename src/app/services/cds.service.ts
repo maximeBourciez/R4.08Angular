@@ -19,4 +19,11 @@ export class CdsService {
   getCdById(id: number): Observable<Cd> {
     return this.http.get<Cd>(`http://localhost:3000/CD/${id}`);
   }
+
+  // Méthode d'ajout d'un cd à la base
+  addCD(cd: Cd): Observable<Cd> {
+    cd.id = Math.floor(Math.random() * 1000);
+    return this.http.post<Cd>('http://localhost:3000/CD', cd);
+  }
+
 }
