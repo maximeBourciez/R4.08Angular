@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Cd} from '../models/cd.model';
-import {Observable} from 'rxjs';
+import {Observable, switchMap} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -22,8 +22,18 @@ export class CdsService {
 
   // Méthode d'ajout d'un cd à la base
   addCD(cd: Cd): Observable<Cd> {
-    cd.id = Math.floor(Math.random() * 1000);
-    return this.http.post<Cd>('http://localhost:3000/CD', cd);
+    return this.getAllCds().pipe(
+      switchMap(cds =>
+        {
+          let maxId = 0;
+          // récupérer l'id max
+          cds.forEach (cd => {
+            maxId = (cd.id > maxId ? cd.id : maxId);
+          } );
+          cd.id = maxId+1; // Ajouter 1 pour éviter les problèmes
+          return this.http.post<Cd>('http://localhost:3000/CD', cd);
+        }
+      ));
   }
 
 }
